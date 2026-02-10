@@ -16,5 +16,10 @@ class EditGallery extends EditRecord
             DeleteAction::make(),
         ];
     }
-}
 
+    // Tambahkan ini supaya setelah Save langsung balik ke halaman List
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+}

@@ -16,7 +16,7 @@
             <div>
                 <h2 class="text-3xl font-bold text-gray-800 mb-6">Siapa Kami?</h2>
                 <p class="text-gray-600 leading-relaxed mb-4">
-                    Forum Mahasiswa Indonesia (FMI) adalah organisasi independen yang menjadi wadah bagi mahasiswa di seluruh nusantara untuk bertukar pikiran, berkolaborasi, dan melakukan aksi nyata bagi masyarakat.
+                    Forum Mahasiswa Islam (FMI) adalah organisasi independen yang menjadi wadah bagi mahasiswa di seluruh nusantara untuk bertukar pikiran, berkolaborasi, dan melakukan aksi nyata bagi masyarakat.
                 </p>
                 <p class="text-gray-600 leading-relaxed">
                     Didirikan dengan semangat kekeluargaan, kami percaya bahwa perubahan besar dimulai dari diskusi kecil yang diwujudkan dalam kerja keras dan dedikasi tinggi terhadap tanah air.

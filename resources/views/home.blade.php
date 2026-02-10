@@ -5,7 +5,7 @@
 @section('content')
     <div class="relative bg-blue-700 py-24 px-6 text-center text-white">
         <div class="max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6">Selamat Datang di Forum Mahasiswa Indonesia</h1>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6">Selamat Datang di Forum Mahasiswa Islam </h1>
             <p class="text-xl text-blue-100 mb-8">Wadah kolaborasi, inovasi, dan pengabdian mahasiswa untuk Indonesia yang lebih baik.</p>
             <div class="flex justify-center space-x-4">
                 <a href="/tentang-kami" class="bg-white text-blue-700 px-8 py-3 rounded-full font-bold hover:bg-blue-50 transition">Tentang Kami</a>

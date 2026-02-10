@@ -27,3 +27,7 @@ Route::get('/tentang-kami', function () {
 Route::get('/kontak', function () {
     return view('contact');
 });
+
+use App\Http\Controllers\ContactController;
+
+Route::post('/contact-send', [ContactController::class, 'store'])->name('contact.send');

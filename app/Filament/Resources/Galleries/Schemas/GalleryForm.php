@@ -6,6 +6,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
+use Filament\Forms\Components\DatePicker;
 
 class GalleryForm
 {
@@ -23,9 +24,19 @@ class GalleryForm
                     ->directory('galeri-fmi') // <--- Pastikan baris ini ada!
                     ->required(),
 
+                // ... kode lainnya tetap sama
+
                 Textarea::make('description')
-                    ->label('Keterangan')
-                    ->columnSpanFull(),
+                    ->label('Tambahkan Link Google Drive')
+                    ->columnSpanFull()
+                    ->required(),
+
+
+                DatePicker::make('date_of_event')
+                    ->label('Tanggal Kegiatan')
+                    ->native(false)
+                    ->displayFormat('d M Y')
+                    ->required(),
             ]);
     }
 }

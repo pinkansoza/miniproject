@@ -2,50 +2,58 @@
 
 namespace App\Filament\Resources\Galleries;
 
-use App\Filament\Resources\Galleries\Pages\CreateGallery;
-use App\Filament\Resources\Galleries\Pages\EditGallery;
-use App\Filament\Resources\Galleries\Pages\ListGalleries;
-use App\Filament\Resources\Galleries\Schemas\GalleryForm;
-use App\Filament\Resources\Galleries\Tables\GalleriesTable;
+use App\Filament\Resources\Galleries\Pages;
 use App\Models\Gallery;
-use BackedEnum;
 use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
-use Filament\Tables\Table;
+use BackedEnum;
 
 class GalleryResource extends Resource
 {
     protected static ?string $model = Gallery::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static BackedEnum|string|null $navigationIcon = 'heroicon-o-rectangle-stack';
 
     protected static ?string $recordTitleAttribute = 'title';
 
-    public static function form(Schema $schema): Schema
+    public static function form(\Filament\Schemas\Schema $schema): \Filament\Schemas\Schema
     {
-        return GalleryForm::configure($schema);
+        // Memanggil helper form kamu dengan alamat lengkap
+        return \App\Filament\Resources\Galleries\Schemas\GalleryForm::configure($schema);
     }
 
-    public static function table(Table $table): Table
+    public static function table(\Filament\Tables\Table $table): \Filament\Tables\Table
     {
-        return GalleriesTable::configure($table);
+        return $table
+            ->columns([
+                \Filament\Tables\Columns\ImageColumn::make('image')
+                    ->label('Foto'),
+                \Filament\Tables\Columns\TextColumn::make('title')
+                    ->label('Judul')
+                    ->searchable(),
+                \Filament\Tables\Columns\TextColumn::make('date_of_event')
+                    ->label('Tanggal Kegiatan')
+                    ->date('d M Y')
+                    ->sortable(),
+            ])
+                    ->actions([
+            // Coba hapus kata "Tables" seperti di ContactResource
+            \Filament\Actions\EditAction::make(), 
+            \Filament\Actions\DeleteAction::make(),
+        ])
+            ;
     }
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => ListGalleries::route('/'),
-            'create' => CreateGallery::route('/create'),
-            'edit' => EditGallery::route('/{record}/edit'),
+            'index' => Pages\ListGalleries::route('/'),
+            'create' => Pages\CreateGallery::route('/create'),
+            'edit' => Pages\EditGallery::route('/{record}/edit'),
         ];
     }
 }
-
