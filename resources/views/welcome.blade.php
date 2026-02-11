@@ -16,61 +16,52 @@
     <div class="max-w-6xl mx-auto px-4 py-12">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @foreach($galleries as $item)
-    <div class="bg-white rounded-2xl shadow-sm overflow-hidden border group flex flex-col h-full">
-        {{-- Gambar --}}
-        <div class="overflow-hidden">
-            <img src="{{ asset('storage/' . $item->image) }}" 
-                 class="w-full aspect-video object-cover transform group-hover:scale-110 transition duration-500"
-                 alt="{{ $item->title }}">
-        </div>
+                <div class="bg-white rounded-2xl shadow-sm overflow-hidden border group flex flex-col h-full">
+                    {{-- Gambar dengan Efek Hover --}}
+                    <div class="overflow-hidden relative">
+                        <img src="{{ asset('storage/' . $item->image) }}" 
+                             class="w-full aspect-video object-cover transform group-hover:scale-110 transition duration-500"
+                             alt="{{ $item->title }}">
+                        {{-- Overlay Tipis saat Hover --}}
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition duration-500"></div>
+                    </div>
 
-        <div class="p-6 flex-1 flex flex-col">
-            <h2 class="font-bold text-xl text-gray-800">{{ $item->title }}</h2>
-            
-            @if($item->description)
-                <div class="mt-3">
-                    @php
-                        // 1. Cari link di dalam deskripsi menggunakan Regex
-                        $pattern = '/https?:\/\/[^\s]+/';
-                        preg_match($pattern, $item->description, $matches);
-                        $url = $matches[0] ?? null;
+                    <div class="p-6 flex-1 flex flex-col">
+                        {{-- Judul Kegiatan --}}
+                        <h2 class="font-bold text-xl text-gray-800 line-clamp-2">{{ $item->title }}</h2>
                         
-                        // 2. Bersihkan teks dari link agar deskripsi tetap rapi
-                        $plainText = trim(preg_replace($pattern, '', $item->description));
-                    @endphp
+                        {{-- Deskripsi Kegiatan (Kolom 'content' yang baru dibuat) --}}
+                        @if($item->content)
+                            <p class="mt-3 text-gray-600 text-sm leading-relaxed mb-4">
+                                {{ Str::limit($item->content, 120) }}
+                            </p>
+                        @else
+                            <p class="mt-3 text-gray-400 text-sm italic mb-4">Tidak ada deskripsi kegiatan.</p>
+                        @endif
 
-                    {{-- Tampilkan Teks Deskripsi (jika ada selain link) --}}
-                    @if($plainText)
-                        <p class="text-gray-600 text-sm leading-relaxed mb-3">
-                            {{ $plainText }}
-                        </p>
-                    @endif
+                        {{-- Tombol GDrive (Kolom 'description') --}}
+                        @if($item->description)
+                            <div class="mt-auto"> {{-- Menjaga tombol tetap di bawah kartu --}}
+                                <a href="{{ $item->description }}" target="_blank" 
+                                   class="inline-flex items-center justify-center w-full px-4 py-2.5 bg-blue-600 text-white text-sm font-bold rounded-lg hover:bg-blue-700 hover:shadow-lg transition duration-300">
+                                    <i class="fab fa-google-drive mr-2"></i>
+                                    Buka Folder Dokumentasi
+                                </a>
+                            </div>
+                        @endif
 
-                    {{-- Tampilkan Tombol GDrive jika ditemukan link --}}
-                    @if($url)
-                        <a href="{{ $url }}" target="_blank" 
-                           class="inline-flex items-center justify-center w-full px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition duration-300">
-                            <i class="fab fa-google-drive mr-2"></i>
-                            Buka Folder Dokumentasi
-                        </a>
-                    @endif
+                        {{-- Footer: Tanggal Kegiatan --}}
+                        <div class="mt-4 pt-4 border-t border-gray-100 flex items-center text-gray-400 text-xs font-medium">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            @if($item->date_of_event)
+                                {{ \Carbon\Carbon::parse($item->date_of_event)->translatedFormat('d F Y') }}
+                            @else
+                                {{ $item->created_at->translatedFormat('d F Y') }}
+                            @endif
+                        </div>
+                    </div>
                 </div>
-            @endif
-
-            {{-- Footer: Tanggal Kegiatan Manual --}}
-            <div class="mt-auto pt-4 border-t border-gray-100 flex items-center text-gray-400 text-xs font-medium">
-                <i class="far fa-calendar-alt mr-2"></i>
-                @if($item->date_of_event)
-                    {{-- Menampilkan tanggal yang kamu input manual di Filament --}}
-                    {{ \Carbon\Carbon::parse($item->date_of_event)->translatedFormat('d F Y') }}
-                @else
-                    {{-- Fallback jika lupa isi tanggal kegiatan --}}
-                    {{ $item->created_at->translatedFormat('d F Y') }}
-                @endif
-            </div>
-        </div>
-    </div>
-@endforeach
+            @endforeach
         </div>
 
         {{-- Jika data kosong --}}

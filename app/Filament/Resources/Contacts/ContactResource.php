@@ -60,7 +60,7 @@ class ContactResource extends Resource
             ->columns([
                 \Filament\Tables\Columns\TextColumn::make('name')->label('Nama')->searchable(),
                 \Filament\Tables\Columns\TextColumn::make('email')->label('Email'),
-                \Filament\Tables\Columns\TextColumn::make('message')->label('Pesan')->limit(50),
+                \Filament\Tables\Columns\TextColumn::make('message')->label('Pesan')->limit(30),
                 \Filament\Tables\Columns\TextColumn::make('created_at')->label('Waktu')->dateTime(),
             ])
             ->actions([

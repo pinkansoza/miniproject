@@ -10,6 +10,7 @@ class Gallery extends Model
     protected $fillable = [
     'title',
     'image',
+    'content',
     'description',
     'date_of_event', // Tambahkan ini
 ];

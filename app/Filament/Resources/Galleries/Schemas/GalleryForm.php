@@ -31,6 +31,11 @@ class GalleryForm
                     ->columnSpanFull()
                     ->required(),
 
+                Textarea::make('content')
+                ->label('Deskripsi Kegiatan')
+                ->placeholder('Jelaskan singkat mengenai kegiatan ini...')
+                ->rows(3)
+                ->columnSpanFull(),
 
                 DatePicker::make('date_of_event')
                     ->label('Tanggal Kegiatan')
