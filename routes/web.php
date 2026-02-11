@@ -2,32 +2,31 @@
 
 use App\Models\Gallery;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
+// Tambahkan baris ini agar Laravel kenal dengan HomeController yang baru dibuat
+use App\Http\Controllers\HomeController;
 
-// 1. Halaman Beranda (Home)
-Route::get('/', function () {
-    // Kita panggil file home.blade.php
-    return view('home'); 
-});
+// 1. Halaman Beranda (Home) - SEKARANG LEWAT CONTROLLER
+Route::get('/', [HomeController::class, 'index']); 
 
-// 2. Halaman Galeri (Pindahan dari yang lama)
+// 2. Halaman Galeri
 Route::get('/galeri', function () {
-    // Mengambil semua data galeri dari database
     $galleries = Gallery::latest()->get();
-
-    // Kirim data ke file welcome.blade.php
     return view('welcome', compact('galleries'));
 });
 
 // 3. Halaman Tentang Kami
-Route::get('/tentang-kami', function () {
-    return view('about');
+Route::get('/tentang-fmiunnes', function () {
+    return view('about'); 
+});
+
+Route::get('/struktur-organisasi', function () {
+    return view('struktur'); 
 });
 
 // 4. Halaman Kontak
 Route::get('/kontak', function () {
     return view('contact');
 });
-
-use App\Http\Controllers\ContactController;
 
 Route::post('/contact-send', [ContactController::class, 'store'])->name('contact.send');

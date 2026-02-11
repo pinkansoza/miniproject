@@ -1,34 +1,32 @@
-<footer class="bg-[#9db2ce] text-white pt-12 pb-8">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            
+<footer class="bg-[#9db2ce] text-white pt-8 pb-6"> <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8"> 
             {{-- Bagian Kiri: Sosmed --}}
-            <div class="space-y-4">
-                <h3 class="font-semibold uppercase tracking-widest text-sm mb-6">CONNECTED WITH US</h3>
-                <div class="space-y-4">
-                    <a href="#" class="flex items-center gap-3 hover:opacity-80 transition">
-                        <i class="fab fa-instagram text-2xl"></i>
-                        <span class="text-lg">@fmiunnes</span>
+            <div class="space-y-3">
+                <h3 class="font-semibold uppercase tracking-widest text-xs mb-3 opacity-80">CONNECTED WITH US</h3>
+                <div class="space-y-2">
+                    <a href="https://www.instagram.com/fmiunnes" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 hover:opacity-80 transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                        <span class="text-base">@fmiunnes</span>
                     </a>
-                    <a href="#" class="flex items-center gap-3 hover:opacity-80 transition">
-                        <i class="fab fa-tiktok text-2xl"></i>
-                        <span class="text-lg">@fmiunnes</span>
+
+                    <a href="https://www.tiktok.com/@fmiunnes" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 hover:opacity-80 transition">
+                        <i class="fab fa-tiktok text-xl"></i>
+                        <span class="text-base">@fmiunnes</span>
                     </a>
-                    <div class="flex items-center gap-3">
-                        <i class="far fa-envelope text-2xl"></i>
-                        <span class="text-lg">fmipaunnesfmi@gmail.com</span>
-                    </div>
+
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fmipaunnesfmi@gmail.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 hover:opacity-80 transition">
+                        <i class="far fa-envelope text-xl"></i>
+                        <span class="text-base">fmipaunnesfmi@gmail.com</span>
+                    </a>
                 </div>
             </div>
 
             {{-- Bagian Kanan: Alamat & Logo --}}
-            <div class="md:text-right space-y-4">
-                <div class="flex items-center md:justify-end gap-3 mb-6">
-                    <span class="font-bold text-xl tracking-tight">FMI FMIPA UNNES</span>
-                    <img src="{{ asset('images/Logo FMI putih.png') }}" alt="Logo" class="h-14 w-auto drop-shadow-md">
-                </div>
-                <div class="text-sm leading-relaxed space-y-1 opacity-90">
-                    <p>Mushola Baitul Alim FMIPA, Kampus Sekaran</p>
+            <div class="md:text-right space-y-3">
+                <div class="flex items-center md:justify-end gap-3 mb-3">
+                    <span class="font-bold text-lg tracking-tight">FMI FMIPA UNNES</span>
+                    <img src="{{ asset('images/Logo FMI putih.png') }}" alt="Logo" class="h-8 w-auto"> </div>
+                <div class="text-s leading-tight opacity-90"> <p>Mushola Baitul Alim FMIPA, Kampus Sekaran</p>
                     <p>Universitas Negeri Semarang, Gunungpati, Kota</p>
                     <p>Semarang, Jawa Tengah 50229</p>
                 </div>
@@ -36,8 +34,7 @@
         </div>
 
         {{-- Copyright --}}
-        <div class="mt-16 text-center border-t border-white/20 pt-8">
-            <p class="text-sm font-medium tracking-wide">
+        <div class="mt-8 text-center border-t border-white/20 pt-4"> <p class="text-s font-medium tracking-wide opacity-70">
                 © 2026 Departemen Hujanmed FMI UNNES. All rights reserved.
             </p>
         </div>
