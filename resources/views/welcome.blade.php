@@ -7,9 +7,9 @@
 {{-- Mengisi konten utama --}}
 @section('content')
     {{-- Header Section --}}
-    <header class="bg-blue-600 py-16 text-white text-center">
-        <h1 class="text-4xl font-extrabold mb-4">Galeri Kegiatan</h1>
-        <p class="text-blue-100 max-w-2xl mx-auto px-4">Dokumentasi perjalanan Forum Mahasiswa Islam (FMI) dalam berbagai kegiatan.</p>
+    <header class="bg-[#9db2ce] py-10 text-white text-center">
+        <h1 class="text-4xl md:text-4xl font-bold mb-4">Galeri Kegiatan</h1>
+        <p class="text-white-100 max-w-2xl mx-auto px-4">Dokumentasi perjalanan FMI FMIPA UNNES dalam berbagai kegiatan.</p>
     </header>
 
     {{-- Gallery Grid Section --}}

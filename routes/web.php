@@ -17,8 +17,8 @@ Route::get('/galeri', function () {
 
 // 3. Halaman Tentang Kami
 Route::get('/tentang-fmiunnes', function () {
-    return view('about'); 
-});
+    return view('about'); // Pastikan anda ada file tentang.blade.php
+})->name('about');
 
 Route::get('/struktur-organisasi', function () {
     return view('struktur'); 

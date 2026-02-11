@@ -3,9 +3,9 @@
 @section('title', 'Hubungi Kami')
 
 @section('content')
-    <section class="bg-blue-600 py-20 text-white text-center">
+    <section class="bg-[#9db2ce] py-10 text-white text-center">
         <h1 class="text-4xl font-bold mb-4">Hubungi Kami</h1>
-        <p class="text-blue-100 max-w-2xl mx-auto px-4">Punya pertanyaan atau ingin berkolaborasi? Jangan ragu untuk menyapa kami!</p>
+        <p class="text-white-100 max-w-2xl mx-auto px-4">Punya pertanyaan atau ingin berkolaborasi? Jangan ragu untuk menyapa kami!</p>
     </section>
 
     <section class="py-16 max-w-6xl mx-auto px-4">
@@ -42,15 +42,6 @@
                             <h3 class="font-bold text-gray-800">WhatsApp</h3>
                             <p class="text-gray-600">+62 812-3456-7890</p>
                         </div>
-                    </div>
-                </div>
-
-                <div class="mt-10">
-                    <h3 class="font-bold text-gray-800 mb-4">Ikuti Media Sosial Kami</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-facebook"></i></a>
                     </div>
                 </div>
             </div>
