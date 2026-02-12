@@ -10,7 +10,7 @@ use App\Filament\Resources\LinkServices\Tables\LinkServicesTable;
 use App\Models\LinkService;
 use BackedEnum;
 use Filament\Resources\Resource;
-use Filament\Schemas\Schema; // KEMBALI KE SCHEMA
+use Filament\Schemas\Schema;
 use Filament\Tables\Table;
 use Filament\Support\Icons\Heroicon;
 
@@ -18,12 +18,10 @@ class LinkServiceResource extends Resource
 {
     protected static ?string $model = LinkService::class;
 
-    // Hapus fungsi canCreate dkk yang tadi, ganti dengan ini saja:
     protected static bool $shouldSkipAuthorization = true;
 
     protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-link';
 
-    // Kembalikan parameter ke Schema agar tidak error compatibility
     public static function form(Schema $schema): Schema
     {
         return LinkServiceForm::configure($schema);

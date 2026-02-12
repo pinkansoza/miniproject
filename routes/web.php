@@ -7,7 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\OrganizationController;
 
-// 1. Halaman Beranda (Home) - SEKARANG LEWAT CONTROLLER
+// 1. Halaman Beranda (Home)
 Route::get('/', [HomeController::class, 'index']); 
 
 // 2. Halaman Galeri

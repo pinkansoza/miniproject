@@ -12,12 +12,10 @@ class DepartmentsTable
     {
         return $table
             ->columns([
-                // Menampilkan foto kecil di tabel admin
                 ImageColumn::make('image')
                     ->label('Foto')
-                    ->rounded(), // Biar bentuknya agak bulat/rounded
+                    ->rounded(),
 
-                // Menampilkan nama departemen
                 TextColumn::make('name')
                     ->label('Nama Departemen')
                     ->searchable()

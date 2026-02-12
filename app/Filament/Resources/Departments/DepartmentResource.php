@@ -42,7 +42,6 @@ class DepartmentResource extends Resource
                     ->sortable(),
             ])
             ->actions([
-                // Menyesuaikan dengan gaya GalleryResource kamu
                 \Filament\Actions\EditAction::make(), 
                 \Filament\Actions\DeleteAction::make(),
             ]);

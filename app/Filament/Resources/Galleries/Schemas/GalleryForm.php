@@ -21,10 +21,8 @@ class GalleryForm
                 FileUpload::make('image')
                     ->label('Pilih Foto')
                     ->image()
-                    ->directory('galeri-fmi') // <--- Pastikan baris ini ada!
+                    ->directory('galeri-fmi')
                     ->required(),
-
-                // ... kode lainnya tetap sama
 
                 Textarea::make('description')
                     ->label('Tambahkan Link Google Drive')

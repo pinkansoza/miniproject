@@ -17,7 +17,6 @@ class GalleryResource extends Resource
 
     public static function form(\Filament\Schemas\Schema $schema): \Filament\Schemas\Schema
     {
-        // Memanggil helper form kamu dengan alamat lengkap
         return \App\Filament\Resources\Galleries\Schemas\GalleryForm::configure($schema);
     }
 
@@ -36,7 +35,6 @@ class GalleryResource extends Resource
                     ->sortable(),
             ])
                     ->actions([
-            // Coba hapus kata "Tables" seperti di ContactResource
             \Filament\Actions\EditAction::make(), 
             \Filament\Actions\DeleteAction::make(),
         ])

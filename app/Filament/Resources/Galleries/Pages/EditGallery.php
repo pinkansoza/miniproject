@@ -17,7 +17,6 @@ class EditGallery extends EditRecord
         ];
     }
 
-    // Tambahkan ini supaya setelah Save langsung balik ke halaman List
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');

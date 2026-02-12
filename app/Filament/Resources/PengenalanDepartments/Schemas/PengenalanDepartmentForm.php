@@ -19,11 +19,10 @@ class PengenalanDepartmentForm
                     ->required()
                     ->placeholder('Contoh: Dept. PH'),
 
-                // Input untuk Upload Foto
                 FileUpload::make('image')
                     ->label('Foto Departemen')
-                    ->image() // Supaya hanya bisa upload gambar
-                    ->directory('departments') // Foto akan disimpan di folder storage/app/public/departments
+                    ->image()
+                    ->directory('departments')
                     ->required()
                     ->imageEditor(),
                 

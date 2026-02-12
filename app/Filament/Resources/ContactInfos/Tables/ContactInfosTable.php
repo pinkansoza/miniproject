@@ -22,6 +22,5 @@ class ContactInfosTable
                     ->label('Isi Kontak / Alamat')
                     ->searchable(),
             ]);
-            // Tidak ada actions di sini agar sama dengan GalleriesTable kamu
     }
 }

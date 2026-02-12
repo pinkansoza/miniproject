@@ -23,7 +23,7 @@ class LinkServicesTable
             ])
             ->actions([
                 \Filament\Actions\EditAction::make(), 
-                \Filament\Actions\DeleteAction::make(), // Tambahkan tombol hapus di sini
+                \Filament\Actions\DeleteAction::make(),
             ]);
     }
 }

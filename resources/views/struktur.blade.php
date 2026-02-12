@@ -4,7 +4,6 @@
 
 @section('content')
     <style>
-        /* Menyembunyikan scrollbar agar tampilan tetap bersih */
         .scrollbar-hide::-webkit-scrollbar {
             display: none;
         }
@@ -48,7 +47,7 @@
 
                             <h4 class="text-lg font-bold text-gray-800 leading-tight mb-1">{{ $member['name'] }}</h4>
                             
-                            <p class="text-blue-600 font-bold text-sm mb-2 tracking-wide capitalize">
+                            <p class="text-blue-600 font-bold text-sm mb-2 tracking-wide uppercase">
                                 {{ $member['position'] }}
                             </p>
                             

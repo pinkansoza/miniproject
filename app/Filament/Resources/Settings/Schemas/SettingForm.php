@@ -10,11 +10,10 @@ class SettingForm
 {
     public static function configure(Schema $schema): Schema
     {
-        // Gunakan $schema->components sesuai pola PengenalanDepartmentForm
         return $schema->components([
             TextInput::make('key')
                 ->label('Key Pengaturan')
-                ->disabled() // Agar key 'org_title' tidak diubah manual
+                ->disabled()
                 ->required(),
 
             Textarea::make('value')

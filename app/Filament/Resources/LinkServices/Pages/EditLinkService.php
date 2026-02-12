@@ -9,7 +9,6 @@ class EditLinkService extends EditRecord
 {
     protected static string $resource = LinkServiceResource::class;
 
-    // Fungsi agar setelah klik 'Save', kembali ke tabel utama
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');

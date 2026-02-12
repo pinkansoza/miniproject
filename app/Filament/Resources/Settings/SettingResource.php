@@ -12,14 +12,12 @@ class SettingResource extends Resource
 {
     protected static ?string $model = Setting::class;
 
-    // Disamakan dengan contoh PengenalanDepartmentResource
     protected static BackedEnum|string|null $navigationIcon = 'heroicon-o-cog-6-tooth';
 
     protected static ?string $navigationLabel = 'Pengaturan';
 
     public static function form(\Filament\Schemas\Schema $schema): \Filament\Schemas\Schema
     {
-        // Memanggil SettingForm dengan parameter $schema
         return SettingForm::configure($schema);
     }
 

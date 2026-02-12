@@ -32,7 +32,7 @@ class OrganizationStructureResource extends Resource
                         ->image()
                         ->directory('organization')
                         ->required()
-                        ->columnSpanFull(), // Agar tampilan foto lebih lega di atas
+                        ->columnSpanFull(),
 
                     \Filament\Forms\Components\TextInput::make('name')
                         ->label('Nama Lengkap')
@@ -50,10 +50,10 @@ class OrganizationStructureResource extends Resource
 
                     \Filament\Forms\Components\TextInput::make('phone')
                         ->label('No. Telepon / WhatsApp')
-                        ->tel() // Memastikan input keyboard di HP muncul angka
+                        ->tel()
                         ->placeholder('08123456789'),
                 ])
-                ->columns(2) // Input Nama, Posisi, Prodi, dan Phone akan berjejer 2 kolom
+                ->columns(2)
                 ->addActionLabel('Tambah Anggota Baru')
                 ->itemLabel(fn (array $state): ?string => $state['name'] ?? 'Anggota Baru'),
         ]);
@@ -69,7 +69,6 @@ class OrganizationStructureResource extends Resource
 
             \Filament\Tables\Columns\TextColumn::make('members')
                 ->label('Jumlah Anggota')
-                // Mengambil data langsung dari model record, bukan looping state
                 ->state(function ($record): int {
                     return count($record->members ?? []);
                 })

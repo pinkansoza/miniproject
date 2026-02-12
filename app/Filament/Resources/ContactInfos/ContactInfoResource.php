@@ -17,7 +17,6 @@ class ContactInfoResource extends Resource
 
     public static function form(\Filament\Schemas\Schema $schema): \Filament\Schemas\Schema
     {
-        // Memanggil helper form kamu dengan alamat lengkap (seperti Gallery)
         return \App\Filament\Resources\ContactInfos\Schemas\ContactInfoForm::configure($schema);
     }
 
@@ -35,7 +34,6 @@ class ContactInfoResource extends Resource
                     ->searchable(),
             ])
             ->actions([
-                // Menggunakan namespace yang sama dengan GalleryResource kamu
                 \Filament\Actions\EditAction::make(), 
                 \Filament\Actions\DeleteAction::make(),
             ]);

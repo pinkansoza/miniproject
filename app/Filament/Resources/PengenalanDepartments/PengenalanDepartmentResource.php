@@ -48,7 +48,7 @@ class PengenalanDepartmentResource extends Resource
                     ->sortable(),
                 \Filament\Tables\Columns\TextColumn::make('description')
                     ->label('Deskripsi')
-                    ->limit(50), // Membatasi tampilan teks di tabel agar tetap rapi
+                    ->limit(50),
             ])
             ->actions([
                 \Filament\Actions\EditAction::make(), 

@@ -15,14 +15,11 @@ class ContactResource extends Resource
 
     protected static ?string $navigationLabel = 'Pesan Masuk';
 
-    // --- TAMBAHAN NOTIFIKASI DI SINI ---
-    
+    //notif badge
     public static function getNavigationBadge(): ?string
 {
-    // Hanya hitung yang belum dibaca
     $count = static::getModel()::where('is_read', false)->count();
 
-    // Jika 0, badge tidak akan muncul sama sekali
     return $count > 0 ? (string) $count : null;
 }
 
@@ -67,10 +64,10 @@ class ContactResource extends Resource
                 \Filament\Actions\ViewAction::make()
                 ->label('Lihat Pesan')
                 ->after(function ($record) {
-                    // Tandai pesan ini saja sebagai sudah dibaca
+                    
                     $record->update(['is_read' => true]);
                 })
-                // Tambahkan ini agar setelah modal ditutup, halaman auto-refresh
+
                 ->after(fn () => redirect(static::getUrl('index'))),
                 \Filament\Actions\DeleteAction::make(),
             ])
