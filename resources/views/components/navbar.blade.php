@@ -33,8 +33,8 @@
                             Tentang FMIUNNES
                         </a>
                         
-                        <a href="/struktur-organisasi" class="block px-5 py-2.5 text-sm hover:bg-blue-50 hover:text-blue-600 transition border-t border-gray-50">
-                            Struktur Organisasi
+                        <a href="/struktur" class="block px-5 py-2.5 text-sm hover:bg-blue-50 hover:text-blue-600 transition border-t border-gray-50">
+                            Susunan Pengurus
                         </a>
                     </div>
                 </div>

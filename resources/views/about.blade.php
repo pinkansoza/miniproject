@@ -6,8 +6,8 @@
     <section class="bg-gray-50 py-10 text-white relative overflow-hidden">
         <div class="max-w-6xl mx-auto px-4 relative z-10 text-center">
             <h1 class="text-3xl md:text-4xl font-bold mb-4 text-[#8AB4E3] drop-shadow-m">Tentang FMI</h1>
-            <p class="text-[#8AB4E3] max-w-4xl mx-auto px-6 text-[15px] md:text-base leading-relaxed font-sans opacity-80">
-            Mengenal lebih dekat FMI FMIPA UNNES sebagai wadah dakwah dan pengembangan diri bagi mahasiswa.
+            <p class="text-[#8AB4E3] w-full max-w-none md:max-w-4xl mx-auto px-6 text-[11px] sm:text-xs md:text-base leading-relaxed text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]">
+                Mengenal lebih dekat FMI FMIPA UNNES sebagai wadah dakwah dan pengembangan diri bagi mahasiswa.
             </p>
         </div>
     </section>

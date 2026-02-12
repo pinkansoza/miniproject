@@ -3,35 +3,73 @@
 @section('title', 'Struktur Organisasi')
 
 @section('content')
+    <style>
+        /* Menyembunyikan scrollbar agar tampilan tetap bersih */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
 
-    <section class="py-16 max-w-6xl mx-auto px-4 bg-gray-50">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-800">Kepengurusan FMI 2024</h2>
-            <div class="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
+    <section class="py-16 max-w-7xl mx-auto px-4 bg-gray-50">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#8AB4E3] drop-shadow-sm uppercase tracking-tight">
+                {{ $title }}
+            </h2>
+            <p class="text-[#8AB4E3] w-full max-w-none md:max-w-4xl mx-auto px-6 text-[11px] sm:text-xs md:text-base leading-relaxed text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]">
+                Mengenal lebih dekat para penggerak di setiap departemen.
+            </p>
         </div>
 
-        {{-- Bagan Sederhana --}}
-        <div class="grid md:grid-cols-1 gap-8 mb-12">
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center max-w-sm mx-auto w-full">
-                <div class="w-24 h-24 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <i class="fas fa-user-tie text-4xl text-blue-600"></i>
+        @foreach($departements as $dept)
+            <div class="mb-20">
+                <div class="flex items-center mb-10">
+                    <div class="flex-grow h-px bg-gray-200"></div>
+                    <h3 class="px-6 text-2xl font-bold text-gray-800 uppercase tracking-widest text-center">
+                        {{ $dept->department_name }}
+                    </h3>
+                    <div class="flex-grow h-px bg-gray-200"></div>
                 </div>
-                <h3 class="text-xl font-bold text-gray-800">Ketua Umum</h3>
-                <p class="text-gray-500 italic">Nama Ketua Di Sini</p>
-            </div>
-        </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
-            {{-- Departemen 1 --}}
-            <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-blue-600">
-                <h4 class="font-bold text-lg text-gray-800 mb-4">Departemen Hujanmed</h4>
-                <ul class="text-gray-600 space-y-2 text-sm">
-                    <li><i class="fas fa-chevron-right text-blue-600 mr-2 text-xs"></i> <strong>CO:</strong> Nama Koordinator</li>
-                    <li><i class="fas fa-circle text-[6px] mr-2 align-middle"></i> Nama Anggota 1</li>
-                    <li><i class="fas fa-circle text-[6px] mr-2 align-middle"></i> Nama Anggota 2</li>
-                </ul>
+                <div class="flex overflow-x-auto pb-8 gap-6 snap-x snap-mandatory scrollbar-hide px-2">
+                    @foreach($dept->members as $member)
+                        <div class="snap-center min-w-[280px] md:min-w-[320px] group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden text-center p-6">
+                            
+                            <div class="relative inline-block mb-4">
+                                <div class="w-32 h-32 rounded-full ring-4 ring-blue-50 ring-offset-2 overflow-hidden mx-auto transition-transform duration-300 group-hover:scale-105 shadow-md">
+                                    <img src="{{ asset('storage/' . $member['photo']) }}" 
+                                         alt="{{ $member['name'] }}" 
+                                         class="w-full h-full object-cover">
+                                </div>
+                            </div>
+
+                            <h4 class="text-lg font-bold text-gray-800 leading-tight mb-1">{{ $member['name'] }}</h4>
+                            
+                            <p class="text-blue-600 font-bold text-sm mb-2 tracking-wide capitalize">
+                                {{ $member['position'] }}
+                            </p>
+                            
+                            <div class="space-y-1">
+                                <p class="text-gray-500 text-xs italic">{{ $member['prodi'] ?? '-' }}</p>
+                                
+                                @if(!empty($member['phone']))
+                                    <div class="mt-4 pt-4 border-t border-gray-50">
+                                        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $member['phone']) }}" 
+                                           target="_blank"
+                                           class="inline-flex items-center text-green-600 hover:text-green-700 font-medium text-xs transition-colors">
+                                            <i class="fab fa-whatsapp mr-1.5 text-sm"></i>
+                                            Hubungi via WhatsApp
+                                        </a>
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
-            {{-- Tambahkan departemen lain di sini --}}
-        </div>
+        @endforeach
     </section>
 @endsection
