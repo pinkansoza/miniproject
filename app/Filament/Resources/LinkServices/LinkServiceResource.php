@@ -21,7 +21,7 @@ class LinkServiceResource extends Resource
     // Hapus fungsi canCreate dkk yang tadi, ganti dengan ini saja:
     protected static bool $shouldSkipAuthorization = true;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-link';
 
     // Kembalikan parameter ke Schema agar tidak error compatibility
     public static function form(Schema $schema): Schema

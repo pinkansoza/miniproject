@@ -103,7 +103,7 @@
             {{-- Grid Kartu Departemen --}}
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
                 @foreach($departments as $dept)
-                <div class="group relative flex flex-col bg-white rounded-[2.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-gray-50 overflow-hidden hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] hover:-translate-y-3 transition-all duration-700">
+                <div class="group relative flex flex-col bg-white rounded-[2.5rem] shadow-xl border border-gray-50 overflow-hidden hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] hover:-translate-y-3 transition-all duration-700">
                     
                     {{-- Container Foto --}}
                     <div class="relative w-full aspect-[4/3] overflow-hidden p-4 pb-0">

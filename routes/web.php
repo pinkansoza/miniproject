@@ -3,8 +3,8 @@
 use App\Models\Gallery;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
-// Tambahkan baris ini agar Laravel kenal dengan HomeController yang baru dibuat
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
 
 // 1. Halaman Beranda (Home) - SEKARANG LEWAT CONTROLLER
 Route::get('/', [HomeController::class, 'index']); 
@@ -16,9 +16,7 @@ Route::get('/galeri', function () {
 });
 
 // 3. Halaman Tentang Kami
-Route::get('/tentang-fmiunnes', function () {
-    return view('about'); // Pastikan anda ada file tentang.blade.php
-})->name('about');
+Route::get('/tentang-fmiunnes', [AboutController::class, 'index'])->name('about');
 
 Route::get('/struktur-organisasi', function () {
     return view('struktur'); 

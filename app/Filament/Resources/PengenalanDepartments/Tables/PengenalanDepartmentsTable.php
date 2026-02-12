@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Filament\Resources\Departments\Tables;
+namespace App\Filament\Resources\PengenalanDepartments\Tables;
 
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class DepartmentsTable
+class PengenalanDepartmentsTable
 {
     public static function configure(Table $table): Table
     {

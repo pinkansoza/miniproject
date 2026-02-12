@@ -3,12 +3,6 @@
 @section('title', 'Struktur Organisasi')
 
 @section('content')
-    <section class="bg-[#9db2ce] py-10 text-white relative overflow-hidden">
-        <div class="max-w-6xl mx-auto px-4 relative z-10 text-center">
-            <h1 class="text-4xl md:text-4xl font-bold mb-4">Struktur Organisasi</h1>
-        </div>
-        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/20 rounded-full -mr-32 -mt-32 blur-3xl"></div>
-    </section>
 
     <section class="py-16 max-w-6xl mx-auto px-4 bg-gray-50">
         <div class="text-center mb-12">

@@ -3,12 +3,13 @@
 @section('title', 'Hubungi Kami')
 
 @section('content')
-    <section class="bg-[#9db2ce] py-10 text-white text-center">
-        <h1 class="text-4xl font-bold mb-4">Hubungi Kami</h1>
-        <p class="text-white-100 max-w-2xl mx-auto px-4">Punya pertanyaan atau ingin berkolaborasi? Jangan ragu untuk menyapa kami!</p>
+    <section class="bg-gray-50 py-10 text-white text-center">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4 text-[#8AB4E3] drop-shadow-m">Hubungi Kami</h1>
+        <p class="text-[#8AB4E3] max-w-2xl mx-auto px-6 text-sm md:text-base leading-relaxed drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]">Punya pertanyaan atau ingin berkolaborasi? Jangan ragu untuk menyapa kami!</p>
     </section>
 
-    <section class="py-16 max-w-6xl mx-auto px-4">
+    <section class="bg-white shadow-inner">
+        <div class="py-16 max-w-6xl mx-auto px-4">
         <div class="grid md:grid-cols-2 gap-12">
             
             <div>

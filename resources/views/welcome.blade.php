@@ -7,16 +7,21 @@
 {{-- Mengisi konten utama --}}
 @section('content')
     {{-- Header Section --}}
-    <header class="bg-[#9db2ce] py-10 text-white text-center">
-        <h1 class="text-4xl md:text-4xl font-bold mb-4">Galeri Kegiatan</h1>
-        <p class="text-white-100 max-w-2xl mx-auto px-4">Dokumentasi perjalanan FMI FMIPA UNNES dalam berbagai kegiatan.</p>
-    </header>
+    <header class="bg-gray-50 py-10 text-center border-b border-gray-100">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4 text-[#8AB4E3] drop-shadow-m">
+        Galeri Kegiatan
+    </h1>
+    <p class="text-[#8AB4E3] max-w-2xl mx-auto px-6 text-sm md:text-base leading-relaxed drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]">
+        Dokumentasi perjalanan FMI FMIPA UNNES dalam berbagai kegiatan.
+    </p>
+</header>
 
     {{-- Gallery Grid Section --}}
+    <div class="bg-white shadow-inner">
     <div class="max-w-6xl mx-auto px-4 py-12">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @foreach($galleries as $item)
-                <div class="bg-white rounded-2xl shadow-sm overflow-hidden border group flex flex-col h-full">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border group flex flex-col h-full">
                     {{-- Gambar dengan Efek Hover --}}
                     <div class="overflow-hidden relative">
                         <img src="{{ asset('storage/' . $item->image) }}" 

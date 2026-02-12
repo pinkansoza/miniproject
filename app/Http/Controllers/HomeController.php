@@ -19,5 +19,6 @@ class HomeController extends Controller
 
         // 3. Kirim kedua data tersebut ke view 'home'
         return view('home', compact('semua_link', 'departments'));
+        
     }
 }
