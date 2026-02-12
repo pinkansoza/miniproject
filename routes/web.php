@@ -23,8 +23,6 @@ Route::get('/struktur-organisasi', function () {
 });
 
 // 4. Halaman Kontak
-Route::get('/kontak', function () {
-    return view('contact');
-});
+Route::get('/kontak', [ContactController::class, 'index'])->name('contact.index');
 
 Route::post('/contact-send', [ContactController::class, 'store'])->name('contact.send');
