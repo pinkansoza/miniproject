@@ -59,7 +59,7 @@
             <li><a href="/" class="block px-6 py-4 hover:bg-gray-50">Beranda</a></li>
             {{-- Link mobile diarahkan sesuai route baru --}}
             <li><a href="/tentang-fmiunnes" class="block px-10 py-3 text-sm hover:bg-gray-50 border-l-4 border-blue-500">Tentang FMIUNNES</a></li>
-            <li><a href="/struktur-organisasi" class="block px-10 py-3 text-sm hover:bg-gray-50 border-l-4 border-blue-500">Struktur Organisasi</a></li>
+            <li><a href="/struktur" class="block px-10 py-3 text-sm hover:bg-gray-50 border-l-4 border-blue-500">Susunan Pengurus</a></li>
             <li><a href="/galeri" class="block px-6 py-4 hover:bg-gray-50">Galeri</a></li>
             <li><a href="/kontak" class="block px-6 py-4 hover:bg-gray-50">Kontak</a></li>
         </ul>

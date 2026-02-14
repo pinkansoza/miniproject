@@ -11,25 +11,30 @@
 
     {{-- Hero Section --}}
     <div class="relative h-[500px] md:h-[600px] flex items-center justify-center text-center text-white overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="{{ asset('images/foto bersama.jpg') }}" alt="FMI FMIPA UNNES" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black/40"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-gray-50 via-transparent to-transparent"></div>
-        </div>
-        
-        <div class="relative z-10 max-w-5xl px-8" x-data="{ show: false }" x-init="setTimeout(() => show = true, 100)">
-            <h2 class="text-xl md:text-2xl font-medium mb-2 tracking-wide transform transition-all duration-700 ease-out" :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
-                Selamat Datang di
-            </h2>
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight transform transition-all duration-1000 delay-300 ease-out" :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
-                Forum Mahasiswa Islam
-            </h1>
-            <p class="text-lg md:text-2xl font-semibold opacity-90 transform transition-all duration-1000 delay-500 ease-out" :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
-                Fakultas Matematika dan Ilmu Pengetahuan Alam <br>
-                Universitas Negeri Semarang
-            </p>
-        </div>
+    <div class="absolute inset-0 z-0">
+        <img src="{{ asset('images/foto bersama.jpg') }}" alt="FMI FMIPA UNNES" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-50 via-transparent to-transparent"></div>
     </div>
+    
+    <div class="relative z-10 max-w-5xl px-8" x-data="{ show: false }" x-init="setTimeout(() => show = true, 100)">
+        <h2 class="text-xl md:text-2xl font-medium mb-2 tracking-wide transform transition-all duration-1000 ease-out" 
+            :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
+            Selamat Datang di
+        </h2>
+        
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight transform transition-all duration-1000 delay-500 ease-out" 
+            :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
+            Forum Mahasiswa Islam
+        </h1>
+        
+        <p class="text-lg md:text-2xl font-semibold opacity-90 transform transition-all duration-1000 delay-1000 ease-out" 
+           :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
+            Fakultas Matematika dan Ilmu Pengetahuan Alam <br>
+            Universitas Negeri Semarang
+        </p>
+    </div>
+</div>
 
     {{-- Section Layanan & Informasi --}}
     <div class="bg-gray-50 py-16">
@@ -96,7 +101,7 @@
             {{-- Header Section --}}
             <div class="text-center mb-8 md:mb-10">
                 <h2 class="text-lg sm:text-xl md:text-3xl font-bold text-gray-800 tracking-normal">
-                    Departmen 
+                    DEPARTMEN
                 </h2>
             </div>
 
