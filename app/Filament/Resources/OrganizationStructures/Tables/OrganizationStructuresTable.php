@@ -2,10 +2,10 @@
 
 namespace App\Filament\Resources\OrganizationStructures\Tables;
 
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Actions\EditAction;
+use Filament\Actions\DeleteAction;
 
 class OrganizationStructuresTable
 {
@@ -13,18 +13,22 @@ class OrganizationStructuresTable
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('department_name')
+                    ->label('Nama Departemen')
+                    ->searchable(),
+
+                TextColumn::make('members')
+                    ->label('Jumlah Anggota')
+                    ->state(function ($record): int {
+                        return count($record->members ?? []);
+                    })
+                    ->formatStateUsing(fn ($state): string => "{$state} Orang")
+                    ->badge()
+                    ->color('success'),
             ])
-            ->filters([
-                //
-            ])
-            ->recordActions([
+            ->actions([
                 EditAction::make(),
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
+                DeleteAction::make(),
             ]);
     }
 }

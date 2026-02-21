@@ -4,6 +4,8 @@ namespace App\Filament\Resources\ContactInfos\Tables;
 
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Actions\EditAction;
+use Filament\Actions\DeleteAction;
 
 class ContactInfosTable
 {
@@ -14,13 +16,15 @@ class ContactInfosTable
                 TextColumn::make('type')
                     ->label('Tipe Kontak')
                     ->searchable(),
-
                 TextColumn::make('icon')
-                    ->label('Icon'),
-
+                    ->label('Nama Icon'),
                 TextColumn::make('value')
-                    ->label('Isi Kontak / Alamat')
+                    ->label('Isi Kontak')
                     ->searchable(),
+            ])
+            ->actions([
+                EditAction::make(), 
+                DeleteAction::make(),
             ]);
     }
 }

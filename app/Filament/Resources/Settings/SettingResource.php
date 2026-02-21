@@ -4,8 +4,11 @@ namespace App\Filament\Resources\Settings;
 
 use App\Filament\Resources\Settings\Pages;
 use App\Filament\Resources\Settings\Schemas\SettingForm;
+use App\Filament\Resources\Settings\Tables\SettingsTable;
 use App\Models\Setting;
 use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Tables\Table;
 use BackedEnum;
 
 class SettingResource extends Resource
@@ -14,27 +17,30 @@ class SettingResource extends Resource
 
     protected static BackedEnum|string|null $navigationIcon = 'heroicon-o-cog-6-tooth';
 
-    protected static ?string $navigationLabel = 'Pengaturan';
+    protected static ?string $navigationLabel = 'Edit Judul Kabinet';
 
-    public static function form(\Filament\Schemas\Schema $schema): \Filament\Schemas\Schema
+    protected static ?string $pluralLabel = 'Edit Judul Kabinet';
+
+    protected static ?string $label = 'Judul Kabinet';
+
+    public static function form(Schema $schema): Schema
     {
         return SettingForm::configure($schema);
     }
 
-    public static function table(\Filament\Tables\Table $table): \Filament\Tables\Table
+    public static function table(Table $table): Table
     {
-        return $table
-            ->columns([
-                \Filament\Tables\Columns\TextColumn::make('key')
-                    ->label('Nama Pengaturan'),
-                \Filament\Tables\Columns\TextColumn::make('value')
-                    ->label('Isi Pengaturan')
-                    ->limit(50),
-            ])
-            ->actions([
-                \Filament\Actions\EditAction::make(),
-                \Filament\Actions\DeleteAction::make(),
-            ]);
+        return SettingsTable::configure($table);
+    }
+
+    public static function canDelete(\Illuminate\Database\Eloquent\Model $record): bool
+    {
+        return false;
+    }
+
+    public static function canCreate(): bool
+    {
+        return false;
     }
 
     public static function getRelations(): array

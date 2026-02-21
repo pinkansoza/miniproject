@@ -2,17 +2,14 @@
 
 namespace App\Filament\Resources\LinkServices;
 
-use App\Filament\Resources\LinkServices\Pages\CreateLinkService;
-use App\Filament\Resources\LinkServices\Pages\EditLinkService;
-use App\Filament\Resources\LinkServices\Pages\ListLinkServices;
+use App\Filament\Resources\LinkServices\Pages;
 use App\Filament\Resources\LinkServices\Schemas\LinkServiceForm;
 use App\Filament\Resources\LinkServices\Tables\LinkServicesTable;
 use App\Models\LinkService;
-use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Table;
-use Filament\Support\Icons\Heroicon;
+use BackedEnum;
 
 class LinkServiceResource extends Resource
 {
@@ -35,9 +32,9 @@ class LinkServiceResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => ListLinkServices::route('/'),
-            'create' => CreateLinkService::route('/create'),
-            'edit' => EditLinkService::route('/{record}/edit'),
+            'index' => Pages\ListLinkServices::route('/'),
+            'create' => Pages\CreateLinkService::route('/create'),
+            'edit' => Pages\EditLinkService::route('/{record}/edit'),
         ];
     }
 }

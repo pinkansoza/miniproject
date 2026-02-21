@@ -3,8 +3,12 @@
 namespace App\Filament\Resources\Galleries;
 
 use App\Filament\Resources\Galleries\Pages;
+use \App\Filament\Resources\Galleries\Schemas\GalleryForm;
+use App\Filament\Resources\Galleries\Tables\GalleriesTable;
 use App\Models\Gallery;
 use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Tables\Table;
 use BackedEnum;
 
 class GalleryResource extends Resource
@@ -15,30 +19,20 @@ class GalleryResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'title';
 
-    public static function form(\Filament\Schemas\Schema $schema): \Filament\Schemas\Schema
+    protected static ?string $navigationLabel = 'Galeri Kegiatan';
+
+    protected static ?string $pluralLabel = 'Galeri Kegiatan';
+
+    protected static ?string $label = 'Galeri Kegiatan';
+
+    public static function form(Schema $schema): Schema
     {
-        return \App\Filament\Resources\Galleries\Schemas\GalleryForm::configure($schema);
+        return GalleryForm::configure($schema);
     }
 
-    public static function table(\Filament\Tables\Table $table): \Filament\Tables\Table
+    public static function table(Table $table): Table
     {
-        return $table
-            ->columns([
-                \Filament\Tables\Columns\ImageColumn::make('image')
-                    ->label('Foto'),
-                \Filament\Tables\Columns\TextColumn::make('title')
-                    ->label('Judul')
-                    ->searchable(),
-                \Filament\Tables\Columns\TextColumn::make('date_of_event')
-                    ->label('Tanggal Kegiatan')
-                    ->date('d M Y')
-                    ->sortable(),
-            ])
-                    ->actions([
-            \Filament\Actions\EditAction::make(), 
-            \Filament\Actions\DeleteAction::make(),
-        ])
-            ;
+        return GalleriesTable::configure($table);
     }
 
     public static function getRelations(): array

@@ -2,11 +2,10 @@
 
 namespace App\Filament\Resources\PengenalanDepartments\Schemas;
 
+use Filament\Schemas\Schema;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
-use Filament\Schemas\Schema;
-use Filament\Forms\Components\DatePicker;
 
 class PengenalanDepartmentForm
 {
@@ -17,7 +16,7 @@ class PengenalanDepartmentForm
                 TextInput::make('name')
                     ->label('Nama Departemen')
                     ->required()
-                    ->placeholder('Contoh: Dept. PH'),
+                    ->placeholder('Contoh: Pengurus Harian'),
 
                 FileUpload::make('image')
                     ->label('Foto Departemen')
@@ -26,7 +25,7 @@ class PengenalanDepartmentForm
                     ->required()
                     ->imageEditor(),
                 
-                Textarea::make('content')
+                Textarea::make('description')
                     ->label('Deskripsi Department')
                     ->placeholder('Jelaskan singkat mengenai department ini...')
                     ->required()

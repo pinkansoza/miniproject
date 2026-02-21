@@ -3,8 +3,12 @@
 namespace App\Filament\Resources\Departments;
 
 use App\Filament\Resources\Departments\Pages;
+use App\Filament\Resources\Departments\Schemas\DepartmentForm;
+use App\Filament\Resources\Departments\Tables\DepartmentsTable;
 use App\Models\Department;
 use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Tables\Table;
 use BackedEnum;
 
 class DepartmentResource extends Resource
@@ -15,36 +19,14 @@ class DepartmentResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'name';
 
-    public static function form(\Filament\Schemas\Schema $schema): \Filament\Schemas\Schema
+    public static function form(Schema $schema): Schema
     {
-        return $schema
-            ->components([
-                \Filament\Forms\Components\TextInput::make('name')
-                    ->label('Nama Departemen')
-                    ->required(),
-                \Filament\Forms\Components\FileUpload::make('image')
-                    ->label('Foto')
-                    ->directory('departments')
-                    ->image()
-                    ->required(),
-            ]);
+        return DepartmentForm::configure($schema);
     }
 
-    public static function table(\Filament\Tables\Table $table): \Filament\Tables\Table
+    public static function table(Table $table): Table
     {
-        return $table
-            ->columns([
-                \Filament\Tables\Columns\ImageColumn::make('image')
-                    ->label('Foto'),
-                \Filament\Tables\Columns\TextColumn::make('name')
-                    ->label('Nama Departemen')
-                    ->searchable()
-                    ->sortable(),
-            ])
-            ->actions([
-                \Filament\Actions\EditAction::make(), 
-                \Filament\Actions\DeleteAction::make(),
-            ]);
+        return DepartmentsTable::configure($table);
     }
 
     public static function getRelations(): array

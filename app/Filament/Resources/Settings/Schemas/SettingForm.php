@@ -12,15 +12,14 @@ class SettingForm
     {
         return $schema->components([
             TextInput::make('key')
-                ->label('Key Pengaturan')
+                ->label('Nama Pengaturan')
                 ->disabled()
                 ->required(),
 
             Textarea::make('value')
-                ->label('Isi Pengaturan')
-                ->placeholder('Masukkan judul atau isi pengaturan di sini...')
-                ->required()
-                ->rows(3),
+                ->label('Judul Kabinet')
+                ->rows(3)
+                ->required(),
         ]);
     }
 }

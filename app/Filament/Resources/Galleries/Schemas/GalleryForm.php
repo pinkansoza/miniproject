@@ -2,10 +2,10 @@
 
 namespace App\Filament\Resources\Galleries\Schemas;
 
+use Filament\Schemas\Schema;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
-use Filament\Schemas\Schema;
 use Filament\Forms\Components\DatePicker;
 
 class GalleryForm

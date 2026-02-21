@@ -3,8 +3,12 @@
 namespace App\Filament\Resources\ContactInfos;
 
 use App\Filament\Resources\ContactInfos\Pages;
+use \App\Filament\Resources\ContactInfos\Schemas\ContactInfoForm;
+use App\Filament\Resources\ContactInfos\Tables\ContactInfosTable;
 use App\Models\ContactInfo;
 use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Tables\Table;
 use BackedEnum;
 
 class ContactInfoResource extends Resource
@@ -15,28 +19,20 @@ class ContactInfoResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'type';
 
-    public static function form(\Filament\Schemas\Schema $schema): \Filament\Schemas\Schema
+    protected static ?string $navigationLabel = 'Info Kontak';
+
+    protected static ?string $pluralLabel = 'Info Kontak';
+
+    protected static ?string $label = 'Info Kontak';
+
+    public static function form(Schema $schema): Schema
     {
-        return \App\Filament\Resources\ContactInfos\Schemas\ContactInfoForm::configure($schema);
+        return ContactInfoForm::configure($schema);
     }
 
-    public static function table(\Filament\Tables\Table $table): \Filament\Tables\Table
+    public static function table(Table $table): Table
     {
-        return $table
-            ->columns([
-                \Filament\Tables\Columns\TextColumn::make('type')
-                    ->label('Tipe Kontak')
-                    ->searchable(),
-                \Filament\Tables\Columns\TextColumn::make('icon')
-                    ->label('Nama Icon'),
-                \Filament\Tables\Columns\TextColumn::make('value')
-                    ->label('Isi Kontak')
-                    ->searchable(),
-            ])
-            ->actions([
-                \Filament\Actions\EditAction::make(), 
-                \Filament\Actions\DeleteAction::make(),
-            ]);
+        return ContactInfosTable::configure($table);
     }
 
     public static function getRelations(): array

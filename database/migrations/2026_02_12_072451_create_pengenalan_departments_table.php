@@ -13,13 +13,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->string('image'); // Untuk simpan path foto pengurus
+            $table->string('image');
             $table->timestamps();
         });
     }
-    /**
-     * Reverse the migrations.
-     */
+
     public function down(): void
     {
         Schema::dropIfExists('pengenalan_departments');

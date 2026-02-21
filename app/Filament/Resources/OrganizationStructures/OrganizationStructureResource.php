@@ -3,8 +3,12 @@
 namespace App\Filament\Resources\OrganizationStructures;
 
 use App\Filament\Resources\OrganizationStructures\Pages;
+use App\Filament\Resources\OrganizationStructures\Schemas\OrganizationStructureForm;
+use App\Filament\Resources\OrganizationStructures\Tables\OrganizationStructuresTable;
 use App\Models\OrganizationStructure;
 use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Tables\Table;
 use BackedEnum;
 
 class OrganizationStructureResource extends Resource
@@ -15,72 +19,21 @@ class OrganizationStructureResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'department_name';
 
-    public static function form(\Filament\Schemas\Schema $schema): \Filament\Schemas\Schema
-{
-    return $schema
-        ->components([
-            \Filament\Forms\Components\TextInput::make('department_name')
-                ->label('Nama Departemen')
-                ->placeholder('Contoh: Departemen Media dan Informasi')
-                ->required(),
+    protected static ?string $navigationLabel = 'Susunan Pengurus';
 
-            \Filament\Forms\Components\Repeater::make('members')
-                ->label('Daftar Anggota')
-                ->schema([
-                    \Filament\Forms\Components\FileUpload::make('photo')
-                        ->label('Foto')
-                        ->image()
-                        ->directory('organization')
-                        ->required()
-                        ->columnSpanFull(),
+    protected static ?string $pluralLabel = 'Susunan Pengurus';
 
-                    \Filament\Forms\Components\TextInput::make('name')
-                        ->label('Nama Lengkap')
-                        ->required(),
+    protected static ?string $label = 'Susunan Pengurus';
 
-                    \Filament\Forms\Components\TextInput::make('position')
-                        ->label('Posisi / Jabatan')
-                        ->placeholder('Contoh: Ketua Departemen / Staff')
-                        ->required(),
+    public static function form(Schema $schema): Schema
+    {
+        return OrganizationStructureForm::configure($schema);
+    }
 
-                    \Filament\Forms\Components\TextInput::make('prodi')
-                        ->label('Program Studi')
-                        ->placeholder('S1 Fisika'),
-                        
-
-                    \Filament\Forms\Components\TextInput::make('phone')
-                        ->label('No. Telepon / WhatsApp')
-                        ->tel()
-                        ->placeholder('08123456789'),
-                ])
-                ->columns(2)
-                ->addActionLabel('Tambah Anggota Baru')
-                ->itemLabel(fn (array $state): ?string => $state['name'] ?? 'Anggota Baru'),
-        ]);
-}
-
-    public static function table(\Filament\Tables\Table $table): \Filament\Tables\Table
-{
-    return $table
-        ->columns([
-            \Filament\Tables\Columns\TextColumn::make('department_name')
-                ->label('Nama Departemen')
-                ->searchable(),
-
-            \Filament\Tables\Columns\TextColumn::make('members')
-                ->label('Jumlah Anggota')
-                ->state(function ($record): int {
-                    return count($record->members ?? []);
-                })
-                ->formatStateUsing(fn ($state): string => "{$state} Orang")
-                ->badge()
-                ->color('success'),
-        ])
-        ->actions([
-            \Filament\Actions\EditAction::make(),
-            \Filament\Actions\DeleteAction::make(),
-        ]);
-}
+    public static function table(Table $table): Table
+    {
+        return OrganizationStructuresTable::configure($table);
+    }
     public static function getPages(): array
     {
         return [
