@@ -1,10 +1,7 @@
-{{-- Menggunakan kerangka dari layouts/app.blade.php --}}
 @extends('layouts.app')
 
-{{-- Mengisi judul halaman --}}
 @section('title', 'Galeri Kegiatan')
 
-{{-- Mengisi konten utama --}}
 @section('content')
     {{-- Header Section --}}
     <header class="bg-gray-50 py-10 text-center border-b border-gray-100">
@@ -69,7 +66,6 @@
             @endforeach
         </div>
 
-        {{-- Jika data kosong --}}
         @if($galleries->isEmpty())
             <div class="text-center py-20">
                 <div class="text-gray-300 text-6xl mb-4">

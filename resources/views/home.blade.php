@@ -3,9 +3,6 @@
 @section('title', 'Beranda')
 
 @section('content')
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
 <div class="font-sans antialiased text-gray-900 overflow-x-hidden">
 
@@ -72,7 +69,7 @@
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
                 <div class="w-full md:w-3/5 text-center md:text-left">
-                    <h2 class="text-2xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-8 tracking-tight">
+                    <h2 class="text-2xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-8 tracking-bold">
                         Apasih FMI Itu?
                     </h2>
                     <p class="text-gray-600 text-base md:text-[19px] leading-relaxed md:leading-[1.8] mb-8 md:mb-10 text-justify md:text-left font-normal opacity-90">
@@ -95,8 +92,8 @@
         </div>
     </section>
 
-    {{-- SECTION STRUKTUR ORGANISASI (MONTSERRAT STYLE) --}}
-    <section class="bg-gray-50 py-20 md:py-10 border-t border-gray-100 font-['Montserrat']">
+    {{-- SECTION DEPARTMENT --}}
+    <section class="bg-gray-50 py-20 md:py-10 border-t border-gray-100 font-['Poppins']">
         <div class="max-w-7xl mx-auto px-6">
             {{-- Header Section --}}
             <div class="text-center mb-8 md:mb-10">
@@ -122,10 +119,10 @@
                     
                     {{-- Detail Teks --}}
                     <div class="p-8 pt-6 flex flex-col items-center justify-center">
-                        <span class="text-blue-600 text-[10px] font-[750] tracking-[0.3em] uppercase mb-2 opacity-60">
+                        <span class="text-blue-600 text-[15px] font-[750] tracking-[0.3em] uppercase mb-2 opacity-60">
                             Departmen
                         </span>
-                        <h3 class="text-[14px] md:text-[17px] font-[750] text-slate-800 tracking-tight text-center uppercase leading-snug">
+                        <h3 class="text-[20px] md:text-[17px] font-[750] text-slate-800 tracking-bold text-center uppercase leading-snug">
                             {{ $dept->name }}
                         </h3>
                         

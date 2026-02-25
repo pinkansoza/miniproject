@@ -6,7 +6,7 @@
     <section class="bg-gray-50 py-10 text-white relative overflow-hidden">
         <div class="max-w-6xl mx-auto px-4 relative z-10 text-center">
             <h1 class="text-3xl md:text-4xl font-bold mb-4 text-[#8AB4E3] drop-shadow-m">Tentang FMI</h1>
-            <p class="text-[#8AB4E3] w-full max-w-none md:max-w-4xl mx-auto px-6 text-[11px] sm:text-xs md:text-base leading-relaxed text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]">
+            <p class="text-[#8AB4E3] w-full max-w-7xl mx-auto px-4 text-[11px] sm:text-xs md:text-base leading-relaxed text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]">
                 Mengenal lebih dekat FMI FMIPA UNNES sebagai wadah dakwah dan pengembangan diri bagi mahasiswa.
             </p>
         </div>
@@ -52,7 +52,7 @@
     <section class="bg-gray-50 py-16 shadow-inner">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800 italic">Visi & Misi</h2>
+                <h2 class="text-3xl font-bold text-gray-800">Visi & Misi</h2>
             </div>
             
             <div class="grid md:grid-cols-2 gap-8">
@@ -85,15 +85,15 @@
     </section>
 
     <section class="bg-white py-16 shadow-inner">
-    <div class="font-sans antialiased text-gray-900">
-        <div class="max-w-7xl mx-auto px-6"> {{-- Saya ubah ke max-w-7xl supaya lebih luas untuk 4 kolom --}}
-            <h1 class="text-3xl font-bold mb-12 text-center italic">Pengenalan Departmen</h1>
+    {{-- Hapus class 'font-poppins' karena sudah diatur Global di layout utama --}}
+    <div class="antialiased text-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            {{-- Judul tetap italic sesuai keinginanmu, tapi sekarang pasti Poppins --}}
+            <h1 class="text-3xl font-bold mb-12 text-center">Pengenalan Departemen</h1>
             
-            {{-- Grid: Mobile (1), Tablet (2), PC (4) --}}
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 @foreach($pengenalan_departments as $dept)
                     <div class="bg-white p-5 rounded-2xl shadow-xl border border-gray-100 hover:shadow-md transition-shadow duration-300 flex flex-col">
-                        {{-- Menampilkan Gambar Departemen --}}
                         @if($dept->image)
                             <div class="overflow-hidden rounded-xl mb-4">
                                 <img src="{{ asset('storage/' . $dept->image) }}" 
@@ -102,8 +102,13 @@
                             </div>
                         @endif
 
-                        <h3 class="text-lg font-bold mb-2 text-gray-800 leading-tight">{{ $dept->name }}</h3>
-                        <p class="text-gray-600 text-xs md:text-sm leading-relaxed text-justify">
+                        {{-- Nama Departemen otomatis Poppins Bold --}}
+                        <h3 class="text-lg font-bold mb-2 text-gray-800 leading-tight uppercase tracking-bold">
+                            {{ $dept->name }}
+                        </h3>
+                        
+                        {{-- Deskripsi otomatis Poppins Regular/Light --}}
+                        <p class="text-gray-600 text-xs md:text-sm leading-relaxed text-justify font-normal">
                             {{ $dept->description }}
                         </p>
                     </div>

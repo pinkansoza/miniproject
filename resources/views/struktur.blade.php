@@ -3,15 +3,6 @@
 @section('title', 'Struktur Organisasi')
 
 @section('content')
-    <style>
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-        .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
 
     <section class="py-16 max-w-7xl mx-auto px-4 bg-gray-50">
         <div class="text-center mb-16">
@@ -24,7 +15,7 @@
         </div>
 
         @foreach($departements as $dept)
-            <div class="mb-20">
+            <div class="mb-10">
                 <div class="flex items-center mb-10">
                     <div class="flex-grow h-px bg-gray-200"></div>
                     <h3 class="px-6 text-2xl font-bold text-gray-800 uppercase tracking-widest text-center">
