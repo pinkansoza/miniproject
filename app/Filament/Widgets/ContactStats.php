@@ -16,7 +16,7 @@ class ContactStats extends BaseWidget
                 ->descriptionIcon('heroicon-m-envelope')
                 ->color('success'),
             
-            Stat::make('Total Koleksi Foto', \App\Models\Gallery::count())
+            Stat::make('Total Koleksi Foto Galeri', \App\Models\Gallery::count())
                 ->descriptionIcon('heroicon-m-photo')
                 ->color('info'),
         ];
