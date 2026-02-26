@@ -16,8 +16,6 @@ class ContactInfosTable
                 TextColumn::make('type')
                     ->label('Tipe Kontak')
                     ->searchable(),
-                TextColumn::make('icon')
-                    ->label('Nama Icon'),
                 TextColumn::make('value')
                     ->label('Isi Kontak')
                     ->searchable(),
