@@ -5,7 +5,7 @@
             <div class="flex items-center">
                 <a href="/" class="flex items-center gap-3">
                     <img src="{{ asset('images/Logo FMI putih.png') }}" alt="Logo" class="h-9 w-auto filter brightness-0">
-                    <span class="text-xl font-medium bold text-gray-800 tracking-tight">FMI FMIPA UNNES</span>
+                    <span class="text-xl font-sans font-semibold text-gray-700 tracking-tight">FMI FMIPA UNNES</span>
                 </a>
             </div>
 

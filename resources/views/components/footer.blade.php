@@ -24,7 +24,7 @@
             {{-- Bagian Kanan: Alamat & Logo --}}
             <div class="md:text-right space-y-3">
                 <div class="flex items-center md:justify-end gap-3 mb-3">
-                    <span class="font-bold text-lg tracking-tight">FMI FMIPA UNNES</span>
+                    <span class="font-semibold text-lg tracking-tight">FMI FMIPA UNNES</span>
                     <img src="{{ asset('images/Logo FMI putih.png') }}" alt="Logo" class="h-8 w-auto"> </div>
                 <div class="text-s leading-normal opacity-90"> <p>Mushola Baitul Alim FMIPA, Kampus Sekaran</p>
                     <p>Universitas Negeri Semarang, Gunungpati, Kota</p>

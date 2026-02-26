@@ -93,7 +93,7 @@
     </section>
 
     {{-- SECTION DEPARTMENT --}}
-    <section class="bg-gray-50 py-20 md:py-10 border-t border-gray-100 font-['Poppins']">
+    <section class="bg-gray-50 py-8 md:py-16 border-t border-gray-100 font-['Poppins']">
         <div class="max-w-7xl mx-auto px-6">
             {{-- Header Section --}}
             <div class="text-center mb-8 md:mb-10">
@@ -119,7 +119,7 @@
                     
                     {{-- Detail Teks --}}
                     <div class="p-8 pt-6 flex flex-col items-center justify-center">
-                        <span class="text-blue-600 text-[15px] font-[750] tracking-[0.3em] uppercase mb-2 opacity-60">
+                        <span class="text-blue-600 text-[17px] font-[750] tracking-[0.1em] uppercase mb-2 opacity-50">
                             Departmen
                         </span>
                         <h3 class="text-[20px] md:text-[17px] font-[750] text-slate-800 tracking-bold text-center uppercase leading-snug">

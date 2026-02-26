@@ -11,7 +11,7 @@
 }
 
 @layer base {
-  html {
+  *, ::before, ::after {
     font-family: var(--font-sans);
   }
 }
