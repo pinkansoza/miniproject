@@ -6,10 +6,10 @@
 
     <section class="py-16 max-w-7xl mx-auto px-4 bg-gray-50">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#8AB4E3] drop-shadow-sm uppercase tracking-tight">
+            <h2 class="text-2xl md:text-4xl font-bold mb-4 text-[#8AB4E3] drop-shadow-sm uppercase tracking-tight">
                 {{ $title }}
             </h2>
-            <p class="text-[#8AB4E3] w-full max-w-none md:max-w-4xl mx-auto px-6 text-[11px] sm:text-xs md:text-base leading-relaxed text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]">
+            <p class="text-[#8AB4E3] w-full max-w-none md:max-w-4xl mx-auto px-6 text-[11px] text-sm md:text-base leading-relaxed text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]">
                 Mengenal lebih dekat para penggerak di setiap departemen.
             </p>
         </div>
@@ -18,7 +18,7 @@
             <div class="mb-10">
                 <div class="flex items-center mb-10">
                     <div class="flex-grow h-px bg-gray-200"></div>
-                    <h3 class="px-6 text-2xl font-bold text-gray-800 uppercase tracking-widest text-center">
+                    <h3 class="px-6 text-xl md:text-2xl font-bold text-gray-800 uppercase tracking-widest text-center">
                         {{ $dept->department_name }}
                     </h3>
                     <div class="flex-grow h-px bg-gray-200"></div>
@@ -36,9 +36,9 @@
                                 </div>
                             </div>
 
-                            <h4 class="text-lg font-bold text-gray-800 leading-tight mb-1">{{ $member['name'] }}</h4>
+                            <h4 class="text-l md:text-lg font-semibold text-gray-800 leading-tight mb-1">{{ $member['name'] }}</h4>
                             
-                            <p class="text-blue-600 font-bold text-sm mb-2 tracking-wide uppercase">
+                            <p class="text-blue-600 font-bold text-xs md:text-sm mb-2 tracking-wide uppercase">
                                 {{ $member['position'] }}
                             </p>
                             

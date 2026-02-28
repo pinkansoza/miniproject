@@ -36,9 +36,11 @@
     {{-- Section Layanan & Informasi --}}
     <div class="bg-gray-50 py-16">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="grid md:grid-cols-3 gap-8 justify-center items-stretch">
+            {{-- Menggunakan flex agar kotak bisa berkumpul di tengah dengan jarak (gap) yang pas --}}
+            <div class="flex flex-wrap justify-center gap-8 items-stretch">
                 @foreach($semua_link as $item)
-                    <div class="group bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col max-w-[320px] w-full mx-auto">
+                    <div class="group bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col w-full sm:w-[calc(50%-1.5rem)] md:w-[320px]">
+                        
                         <div class="flex-grow">
                             <h3 class="text-xl font-bold text-gray-800 leading-tight mb-4 tracking-tight">
                                 {!! nl2br(e($item->judul)) !!}
@@ -47,17 +49,20 @@
                                 {{ $item->keterangan }}
                             </p>
                         </div>
+
                         <div class="mt-auto">
                             <div class="w-full h-[1px] bg-blue-100 group-hover:bg-blue-400 transition-colors duration-500 mb-5"></div>
+                            
                             <a href="{{ $item->url }}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between group-hover:text-blue-600 transition-colors">
                                 <span class="font-bold text-gray-800 group-hover:text-blue-600 text-[15px]">
-                                    {{ str_contains(strtolower($item->judul), 'pendataan') ? 'Isi Pendataan' : 'Isi Formulir' }}
+                                    Isi Formulir
                                 </span>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-6 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
                             </a>
                         </div>
+
                     </div>
                 @endforeach
             </div>
@@ -97,7 +102,7 @@
         <div class="max-w-7xl mx-auto px-6">
             {{-- Header Section --}}
             <div class="text-center mb-8 md:mb-10">
-                <h2 class="text-lg sm:text-xl md:text-3xl font-bold text-gray-800 tracking-normal">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 tracking-normal">
                     DEPARTMEN
                 </h2>
             </div>

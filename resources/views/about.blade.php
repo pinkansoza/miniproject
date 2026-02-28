@@ -5,8 +5,8 @@
 @section('content')
     <section class="bg-gray-50 py-10 text-white relative overflow-hidden">
         <div class="max-w-6xl mx-auto px-4 relative z-10 text-center">
-            <h1 class="text-3xl md:text-4xl font-bold mb-4 text-[#8AB4E3] drop-shadow-m">Tentang FMI</h1>
-            <p class="text-[#8AB4E3] w-full max-w-7xl mx-auto px-4 text-[11px] sm:text-xs md:text-base leading-relaxed text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]">
+            <h1 class="text-2xl md:text-4xl font-bold mb-4 text-[#8AB4E3] drop-shadow-m">Tentang FMI</h1>
+            <p class="text-[#8AB4E3] w-full max-w-7xl mx-auto px-4 text-[11px] text-sm md:text-base leading-relaxed text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]">
                 Mengenal lebih dekat FMI FMIPA UNNES sebagai wadah dakwah dan pengembangan diri bagi mahasiswa.
             </p>
         </div>
@@ -19,7 +19,7 @@
             {{-- Kolom Teks --}}
             {{-- Kita set order-1 agar di HP dia muncul pertama --}}
             <div class="order-1 text-center md:text-left">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6">Siapa Kami?</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Siapa Kami?</h2>
                 <p class="text-gray-600 text-base md:text-[20px] leading-[1.8] mb-4 text-justify md:text-left font-sans">
                     Forum Mahasiswa Islam (FMI) Fakultas Matematika dan Ilmu
                     Pengetahuan Alam Universitas Negeri Semarang merupakan lembaga
@@ -52,7 +52,7 @@
     <section class="bg-gray-50 py-16 shadow-inner">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800">Visi & Misi</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Visi & Misi</h2>
             </div>
             
             <div class="grid md:grid-cols-2 gap-8">
@@ -85,11 +85,9 @@
     </section>
 
     <section class="bg-white py-16 shadow-inner">
-    {{-- Hapus class 'font-poppins' karena sudah diatur Global di layout utama --}}
     <div class="antialiased text-gray-900">
         <div class="max-w-7xl mx-auto px-6">
-            {{-- Judul tetap italic sesuai keinginanmu, tapi sekarang pasti Poppins --}}
-            <h1 class="text-3xl font-bold mb-12 text-center">Pengenalan Departemen</h1>
+            <h1 class="text-2xl md:text-3xl font-bold mb-12 text-center">Pengenalan Departemen</h1>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 @foreach($pengenalan_departments as $dept)

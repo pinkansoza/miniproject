@@ -6,18 +6,16 @@
 
     <section class="bg-gray-50 py-10 text-white text-center">
         <h1 class="text-2xl md:text-4xl font-bold mb-4 text-[#8AB4E3] drop-shadow-m">Hubungi Kami</h1>
-        <p class="text-[#8AB4E3] w-full max-w-7xl mx-auto px-4 text-[11px] sm:text-xs md:text-base leading-relaxed text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]">Punya pertanyaan atau ingin berkolaborasi? Jangan ragu untuk menyapa kami!</p>
+        <p class="text-[#8AB4E3] w-full max-w-7xl mx-auto px-4 text-[11px] text-sm md:text-base leading-relaxed text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]">Punya pertanyaan atau ingin berkolaborasi? Jangan ragu untuk menyapa kami!</p>
     </section>
 
     <section class="bg-white shadow-inner">
-        <div class="py-10 md:py-16 max-w-6xl mx-auto px-16">
+        <div class="py-10 md:py-16 max-w-6xl mx-auto px-8">
         
         <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
             
             {{-- BAGIAN INFORMASI KONTAK (Pindah ke bawah di HP) --}}
             <div class="order-2 md:order-1">
-                {{-- Judul: text-xl di HP, md:text-2xl di Desktop --}}
-                {{-- Judul: text-lg (kecil di HP), md:text-2xl (kembali besar saat layar lebar) --}}
                 <h2 class="text-lg md:text-2xl font-bold text-gray-800 mb-6 transition-all">Informasi Kontak</h2>
                 <div class="space-y-6">
                     @foreach($contact_infos as $info)
@@ -31,9 +29,7 @@
                             @endif
                         </div>
                         <div>
-                            {{-- Label: text-sm di HP, md:text-lg di Desktop --}}
                             <h3 class="font-bold text-gray-800 text-sm md:text-lg leading-tight">{{ $info->type }}</h3>
-                            {{-- Value: text-xs di HP, md:text-base di Desktop --}}
                             <p class="text-gray-600 whitespace-pre-line text-xs md:text-base mt-1">{{ $info->value }}</p>
                         </div>
                     </div>
