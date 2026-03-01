@@ -5,75 +5,80 @@
 @section('content')
     {{-- Header Section --}}
     <header class="bg-gray-50 py-10 text-center border-b border-gray-100">
-    <h1 class="text-2xl md:text-4xl font-bold mb-4 text-[#8AB4E3] drop-shadow-m">
-        Galeri Kegiatan
-    </h1>
-    <p class="text-[#8AB4E3] max-w-2xl mx-auto px-6 text-sm md:text-base leading-relaxed drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]">
-        Dokumentasi perjalanan FMI FMIPA UNNES dalam berbagai kegiatan.
-    </p>
-</header>
+        <h1 class="text-2xl md:text-4xl font-bold mb-4 text-[#8AB4E3] drop-shadow-sm">
+            Galeri Kegiatan
+        </h1>
+        <p class="text-[#8AB4E3] max-w-2xl mx-auto px-6 text-sm md:text-base leading-relaxed drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]">
+            Dokumentasi perjalanan FMI FMIPA UNNES dalam berbagai kegiatan.
+        </p>
+    </header>
 
-    {{-- Gallery Grid Section --}}
-<div class="bg-white shadow-inner min-h-screen">
-    <div class="max-w-8xl mx-auto px-6 md:px-10 py-16">
-        
-        {{-- Menggunakan Flex Wrap agar bisa ke tengah secara otomatis --}}
-        <div class="flex flex-wrap justify-center gap-9">
-            @foreach($galleries as $item)
-                {{-- Penentuan lebar kartu agar tetap konsisten (Responsive Width) --}}
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border group flex flex-col w-full sm:w-[calc(50%-1.25rem)] md:w-[calc(33.333%-1.5rem)] lg:w-[calc(25%-1.75rem)] min-w-[280px] max-w-[350px]">
-                    
-                    {{-- Gambar dengan Efek Hover --}}
-                    <div class="overflow-hidden relative">
-                        <img src="{{ asset('storage/' . $item->image) }}" 
-                             class="w-full aspect-video object-cover transform group-hover:scale-110 transition duration-500"
-                             alt="{{ $item->title }}">
-                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition duration-500"></div>
+    {{-- Gallery Section --}}
+    <section class="bg-white shadow-inner min-h-screen py-16">
+        <div class="max-w-[90rem] mx-auto px-6">
+            
+            @if($galleries->isEmpty())
+                <div class="py-20 text-center">
+                    <div class="text-gray-200 text-6xl mb-4">
+                        <i class="fas fa-images"></i>
                     </div>
-
-                    <div class="p-6 flex-1 flex flex-col">
-                        <h2 class="font-bold text-lg md:text-xl text-gray-800 line-clamp-2">{{ $item->title }}</h2>
-                        
-                        @if($item->content)
-                            <p class="mt-3 text-gray-600 text-xs md:text-sm leading-relaxed mb-4 text-justify">
-                                {{ Str::limit($item->content, 120) }}
-                            </p>
-                        @else
-                            <p class="mt-3 text-gray-400 text-sm italic mb-4">Tidak ada deskripsi kegiatan.</p>
-                        @endif
-
-                        @if($item->description)
-                            <div class="mt-auto">
-                                <a href="{{ $item->description }}" target="_blank" 
-                                   class="inline-flex items-center justify-center w-full px-4 py-2.5 bg-blue-600 text-white text-xs md:text-sm font-bold rounded-lg hover:bg-blue-700 hover:shadow-lg transition duration-300">
-                                    <i class="fab fa-google-drive mr-2"></i>
-                                    Buka Folder Dokumentasi
-                                </a>
+                    <p class="text-gray-500 italic">Belum ada dokumentasi kegiatan saat ini.</p>
+                </div>
+            @else
+                {{-- Flexbox Wrap: justify-center agar kartu yang sisa tetap di tengah --}}
+                <div class="flex flex-wrap justify-center gap-6 md:gap-8 items-stretch">
+                    @foreach($galleries as $item)
+                        <div class="group bg-white rounded-[1.5rem] shadow-xl border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)] min-w-[260px] overflow-hidden">
+                            
+                            {{-- Container Gambar --}}
+                            <div class="overflow-hidden relative h-48">
+                                <img src="{{ asset('storage/' . $item->image) }}" 
+                                     class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+                                     alt="{{ $item->title }}">
+                                <div class="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/5 transition duration-500"></div>
                             </div>
-                        @endif
 
-                        <div class="mt-4 pt-4 border-t border-gray-100 flex items-center text-gray-400 text-xs font-medium">
-                            <i class="far fa-calendar-alt mr-2"></i>
-                            @if($item->date_of_event)
-                                {{ \Carbon\Carbon::parse($item->date_of_event)->translatedFormat('d F Y') }}
-                            @else
-                                {{ $item->created_at->translatedFormat('d F Y') }}
-                            @endif
+                            <div class="p-6 flex-1 flex flex-col">
+                                {{-- Judul: Tampil semua --}}
+                                <h3 class="text-base md:text-lg font-bold text-gray-800 mb-3 text-center tracking-tight leading-tight uppercase">
+                                    {{ $item->title }}
+                                </h3>
+                                
+                                {{-- Deskripsi: Tampil penuh --}}
+                                <div class="flex-grow">
+                                    @if($item->content)
+                                        <p class="text-gray-600 text-[11px] md:text-xs leading-relaxed text-justify mb-4 opacity-90">
+                                            {{ $item->content }}
+                                        </p>
+                                    @else
+                                        <p class="text-gray-400 text-[11px] italic mb-4 text-center">
+                                            Tidak ada deskripsi kegiatan.
+                                        </p>
+                                    @endif
+                                </div>
+
+                                {{-- Tombol Dokumentasi --}}
+                                @if($item->description)
+                                    <div class="mt-auto pt-4 border-t border-gray-50">
+                                        <a href="{{ $item->description }}" target="_blank" 
+                                           class="flex items-center justify-center gap-2 bg-[#7aa2d1] hover:bg-[#8AB4E3] text-white font-bold text-[10px] tracking-widest py-3 rounded-xl shadow-md transition-all">
+                                            <i class="fab fa-google-drive text-sm"></i>
+                                            Buka Folder Dokumentasi
+                                        </a>
+                                    </div>
+                                @endif
+
+                                {{-- Footer: Tanggal --}}
+                                <div class="mt-3 flex items-center justify-center text-gray-400 text-[10px] font-medium">
+                                    <i class="far fa-calendar-alt mr-2 text-[#8AB4E3]"></i>
+                                    {{ \Carbon\Carbon::parse($item->date_of_event ?? $item->created_at)->translatedFormat('d F Y') }}
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
-            @endforeach
-        </div>
+            @endif
 
-        @if($galleries->isEmpty())
-            {{-- Bagian Empty State tetap sama --}}
-            <div class="text-center py-20">
-                <div class="text-gray-300 text-6xl mb-4">
-                    <i class="fas fa-image"></i>
-                </div>
-                <p class="text-gray-500 text-lg">Belum ada dokumentasi kegiatan saat ini.</p>
-            </div>
-        @endif
-    </div>
-</div>
+        </div>
+    </section>
 @endsection

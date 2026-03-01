@@ -71,28 +71,40 @@
 
     {{-- Section Apasih FMI Itu? --}}
     <section class="bg-white py-12 md:py-24">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
-                <div class="w-full md:w-3/5 text-center md:text-left">
-                    <h2 class="text-2xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-8 tracking-bold">
+        {{-- Menyesuaikan padding: px-8 (HP), sm:px-16 (Tablet), lg:px-6 (Desktop) --}}
+        <div class="max-w-6xl mx-auto px-8 sm:px-16 lg:px-6">
+            {{-- Di tablet (sebelum md), kita tetap pakai flex-col agar tidak sesak samping --}}
+            <div class="flex flex-col lg:flex-row items-center gap-4 lg:gap-16">
+                
+                {{-- Kolom Teks --}}
+                <div class="w-full lg:w-3/5 text-center lg:text-left">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8 tracking-tight">
                         Apasih FMI Itu?
                     </h2>
-                    <p class="text-gray-600 text-base md:text-[19px] leading-relaxed md:leading-[1.8] mb-8 md:mb-10 text-justify md:text-left font-normal opacity-90">
+                    {{-- Menambahkan sm:max-w-2xl sm:mx-auto agar di tablet teks tidak melar --}}
+                    <p class="text-gray-600 text-sm md:text-[19px] leading-relaxed md:leading-[1.8] mb-8 md:mb-10 text-justify lg:text-left font-normal opacity-90 sm:max-w-2xl sm:mx-auto lg:max-w-none">
                         Forum Mahasiswa Islam (FMI) Fakultas Matematika dan Ilmu Pengetahuan Alam Universitas Negeri Semarang merupakan lembaga kemahasiswaan tingkat fakultas yang menjadi salah satu lembaga dakwah kampus sebagai tempat meningkatkan ruhiyah bagi seluruh mahasiswa FMIPA UNNES.
                     </p>
-                    <a href="{{ route('about') }}" class="inline-flex items-center px-8 md:px-10 py-3.5 bg-[#a3b3cc] hover:bg-[#8fa2bd] text-white font-bold rounded-xl transition-all duration-300 shadow-sm hover:shadow-lg group text-sm tracking-wide">
+                    <a href="{{ route('about') }}" class="inline-flex items-center px-8 md:px-10 py-2.5 md:py-3.5 bg-[#9db2ce] hover:bg-[#7aa2d1] text-white font-bold rounded-xl transition-all duration-300 shadow-sm hover:shadow-lg group text-xs md:text-sm tracking-wide">
                         Selengkapnya
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-3 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </a>
                 </div>
-                <div class="w-full md:w-2/5 flex justify-center mt-8 md:mt-0">
+
+                {{-- Kolom Logo --}}
+                <div class="w-full lg:w-2/5 flex justify-center mt-8 lg:mt-0">
                     <div class="relative">
-                        <div class="absolute -inset-6 md:-inset-10 bg-blue-50/50 rounded-full blur-2xl md:blur-3xl -z-10"></div>
-                        <img src="{{ asset('images/Logo FMI hitam.png') }}" alt="Logo FMI FMIPA UNNES" class="w-full max-w-[250px] md:max-w-[340px] h-auto drop-shadow-2xl">
+                        {{-- Glow effect yang lebih soft --}}
+                        <div class="absolute -inset-8 bg-blue-50/80 rounded-full blur-3xl -z-10"></div>
+                        {{-- Logo disesuaikan: 200px (HP), 280px (Tablet), 340px (Desktop) --}}
+                        <img src="{{ asset('images/Logo FMI hitam.png') }}" 
+                            alt="Logo FMI FMIPA UNNES" 
+                            class="w-full max-w-[200px] sm:max-w-[280px] lg:max-w-[340px] h-auto drop-shadow-2xl">
                     </div>
                 </div>
+
             </div>
         </div>
     </section>

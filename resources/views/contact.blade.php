@@ -66,7 +66,7 @@
                         <label class="block text-xs md:text-sm font-medium text-gray-700 mb-1">Pesan</label>
                         <textarea name="message" rows="4" class="w-full px-4 py-2 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition" placeholder="Apa yang ingin Anda sampaikan?" required>{{ old('message') }}</textarea>
                     </div>
-                    <button type="submit" class="w-full bg-blue-600 text-white text-sm md:text-base font-bold py-3 rounded-lg hover:bg-blue-700 transition flex items-center justify-center">
+                    <button type="submit" class="w-full bg-[#7aa2d1] text-white text-sm md:text-base font-bold py-3 rounded-lg hover:bg-[#9db2ce] transition flex items-center justify-center">
                         Kirim Sekarang <i class="fas fa-paper-plane ml-2"></i>
                     </button>
                 </form>
