@@ -83,12 +83,42 @@
          style="display: none;" 
          class="md:hidden bg-white border-t border-gray-100 shadow-2xl relative z-40">
         <ul class="flex flex-col py-4 font-medium">
-            <li><a href="/" class="block px-8 py-4 hover:bg-blue-50 hover:text-[#8AB4E3] {{ request()->is('/') ? 'text-[#8AB4E3] bg-blue-50 border-l-4 border-[#8AB4E3]' : '' }}">Beranda</a></li>
+            <li>
+                <a href="/" class="block px-8 py-4 hover:bg-blue-50 hover:text-[#8AB4E3] {{ request()->is('/') ? 'text-[#8AB4E3] bg-blue-50 border-l-4 border-[#8AB4E3]' : '' }}">
+                    Beranda
+                </a>
+            </li>
+
             <li class="bg-gray-50/50 px-8 py-2 text-xs font-bold text-gray-400 uppercase tracking-widest">Tentang Kami</li>
-            <li><a href="/struktur-fmiunnes" class="block px-12 py-3 text-sm hover:bg-blue-50 hover:text-[#8AB4E3] {{ request()->is('struktur') ? 'text-[#8AB4E3] border-l-4 border-[#8AB4E3]' : '' }}">Susunan Pengurus</a></li>
-            <li><a href="/lembaga-dakwah-jurusan" class="block px-12 py-3 text-sm hover:bg-blue-50 hover:text-[#8AB4E3] {{ request()->is('lembaga-dakwah-jurusan') ? 'text-[#8AB4E3] border-l-4 border-[#8AB4E3]' : '' }}">Kenali LDJ FMIPA</a></li>
-            <li><a href="/galeri-fmiunnes" class="block px-8 py-4 hover:bg-blue-50 hover:text-[#8AB4E3] {{ request()->is('galeri') ? 'text-[#8AB4E3] bg-blue-50 border-l-4 border-[#8AB4E3]' : '' }}">Galeri</a></li>
-            <li><a href="/kontak-fmiunnes" class="block px-8 py-4 hover:bg-blue-50 hover:text-[#8AB4E3] {{ request()->is('kontak') ? 'text-[#8AB4E3] bg-blue-50 border-l-4 border-[#8AB4E3]' : '' }}">Kontak</a></li>
+            <li>
+                <a href="/tentang-fmiunnes" class="block px-12 py-3 text-sm hover:bg-blue-50 hover:text-[#8AB4E3] {{ request()->is('tentang-fmiunnes') ? 'text-[#8AB4E3] border-l-4 border-[#8AB4E3]' : '' }}">
+                    Tentang FMIUNNES
+                </a>
+            </li>
+
+            <li>
+                <a href="/struktur-fmiunnes" class="block px-12 py-3 text-sm hover:bg-blue-50 hover:text-[#8AB4E3] {{ request()->is('struktur-fmiunnes') ? 'text-[#8AB4E3] border-l-4 border-[#8AB4E3]' : '' }}">
+                    Susunan Pengurus
+                </a>
+            </li>
+
+            <li>
+                <a href="/lembaga-dakwah-jurusan" class="block px-12 py-3 text-sm hover:bg-blue-50 hover:text-[#8AB4E3] {{ request()->is('lembaga-dakwah-jurusan') ? 'text-[#8AB4E3] border-l-4 border-[#8AB4E3]' : '' }}">
+                    Kenali LDJ FMIPA
+                </a>
+            </li>
+
+            <li class="border-t border-gray-50 mt-2">
+                <a href="/galeri-fmiunnes" class="block px-8 py-4 hover:bg-blue-50 hover:text-[#8AB4E3] {{ request()->is('galeri-fmiunnes') ? 'text-[#8AB4E3] bg-blue-50 border-l-4 border-[#8AB4E3]' : '' }}">
+                    Galeri
+                </a>
+            </li>
+
+            <li>
+                <a href="/kontak-fmiunnes" class="block px-8 py-4 hover:bg-blue-50 hover:text-[#8AB4E3] {{ request()->is('kontak-fmiunnes') ? 'text-[#8AB4E3] bg-blue-50 border-l-4 border-[#8AB4E3]' : '' }}">
+                    Kontak
+                </a>
+            </li>
         </ul>
     </div>
 </nav>
