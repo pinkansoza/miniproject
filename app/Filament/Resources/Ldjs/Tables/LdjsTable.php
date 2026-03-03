@@ -15,8 +15,11 @@ class LdjsTable
         return $table
             ->columns([
                 ImageColumn::make('logo'),
-                TextColumn::make('nama_jurusan')->searchable(),
-                TextColumn::make('instagram_link')->copyable(),
+                TextColumn::make('nama_jurusan')
+                    ->searchable()
+                    ->label('Nama LDJ'),
+                TextColumn::make('instagram_link')
+                    ->copyable(),
             ])
 
             ->actions([

@@ -21,7 +21,9 @@ class ContactForm
                 Textarea::make('message')
                     ->label('Pesan')
                     ->disabled()
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->rows(10)
+                    ->autosize(),
             ]);
     }
 }
