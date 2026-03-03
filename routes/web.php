@@ -12,17 +12,17 @@ use App\Http\Controllers\LdjController;
 Route::get('/', [HomeController::class, 'index']); 
 
 // 2. Halaman Galeri
-Route::get('/galeri', [GalleryController::class, 'index']);
+Route::get('/galeri-fmiunnes', [GalleryController::class, 'index']);
 
 // 3. Halaman Tentang Kami
 Route::get('/tentang-fmiunnes', [AboutController::class, 'index'])->name('about');
 
-Route::get('/struktur', [OrganizationController::class, 'index'])->name('struktur.index');
+Route::get('/struktur-fmiunnes', [OrganizationController::class, 'index'])->name('struktur.index');
 
 Route::get('/lembaga-dakwah-jurusan', [LdjController::class, 'index'])->name('ldj');
 
 // 4. Halaman Kontak
-Route::get('/kontak', [ContactController::class, 'index'])->name('contact.index');
+Route::get('/kontak-fmiunnes', [ContactController::class, 'index'])->name('contact.index');
 
 Route::post('/contact-send', [ContactController::class, 'store'])->name('contact.send');
 
