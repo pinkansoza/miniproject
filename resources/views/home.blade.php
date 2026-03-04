@@ -139,7 +139,7 @@
                         <span class="text-blue-600 text-[10px] md:text-[12px] lg:text-[15px] font-[750] tracking-widest uppercase mb-1 opacity-50">
                             Departemen
                         </span>
-                        <h3 class="text-[11px] sm:text-[13px] md:text-[15px] lg:text-[17px] font-[750] text-slate-800 tracking-tight text-center uppercase leading-tight">
+                        <h3 class="text-[11px] sm:text-[13px] md:text-[15px] lg:text-[17px] font-bold text-slate-800 tracking-wide text-center uppercase leading-tight">
                             {{ $dept->name }}
                         </h3>
                         
