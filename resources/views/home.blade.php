@@ -111,41 +111,41 @@
 
     {{-- SECTION DEPARTMENT --}}
     <section class="bg-gray-50 py-8 md:py-16 border-t border-gray-100 font-['Poppins']">
-        <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
             {{-- Header Section --}}
             <div class="text-center mb-8 md:mb-10">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 tracking-normal">
-                    DEPARTMEN
+                <h2 class="text-xl md:text-3xl font-bold text-gray-800 tracking-normal uppercase">
+                    Departemen
                 </h2>
             </div>
 
-            {{-- Grid Kartu Departemen --}}
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            {{-- Grid Fleksibel: Otomatis menyesuaikan layar --}}
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-10">
                 @foreach($departments as $dept)
-                <div class="group relative flex flex-col bg-white rounded-[2.5rem] shadow-xl border border-gray-50 overflow-hidden hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] hover:-translate-y-3 transition-all duration-700">
+                <div class="group relative flex flex-col bg-white rounded-[1.5rem] md:rounded-[2.5rem] shadow-xl border border-gray-100 overflow-hidden hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-500">
                     
                     {{-- Container Foto --}}
-                    <div class="relative w-full aspect-[4/3] overflow-hidden p-4 pb-0">
+                    <div class="relative w-full aspect-[4/3] overflow-hidden p-2 md:p-4 pb-0">
                         <img src="{{ asset('storage/' . $dept->image) }}" 
                              alt="{{ $dept->name }}" 
-                             class="w-full h-full object-cover rounded-[1.8rem] transition-transform duration-1000 group-hover:scale-110">
+                             class="w-full h-full object-cover rounded-[1rem] md:rounded-[1.8rem] transition-transform duration-1000 group-hover:scale-110">
                         
-                        {{-- Overlay Gradient --}}
-                        <div class="absolute inset-4 bg-gradient-to-t from-black-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[1.8rem]"></div>
+                        {{-- Overlay --}}
+                        <div class="absolute inset-2 md:inset-4 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[1rem] md:rounded-[1.8rem]"></div>
                     </div>
                     
                     {{-- Detail Teks --}}
-                    <div class="p-8 pt-6 flex flex-col items-center justify-center">
-                        <span class="text-blue-600 text-[17px] font-[750] tracking-[0.1em] uppercase mb-2 opacity-50">
-                            Departmen
+                    <div class="p-4 md:p-6 lg:p-8 pt-3 md:pt-5 flex flex-col items-center justify-center">
+                        <span class="text-blue-600 text-[10px] md:text-[12px] lg:text-[15px] font-[750] tracking-widest uppercase mb-1 opacity-50">
+                            Departemen
                         </span>
-                        <h3 class="text-[20px] md:text-[17px] font-[750] text-slate-800 tracking-bold text-center uppercase leading-snug">
+                        <h3 class="text-[11px] sm:text-[13px] md:text-[15px] lg:text-[17px] font-[750] text-slate-800 tracking-tight text-center uppercase leading-tight">
                             {{ $dept->name }}
                         </h3>
                         
-                        {{-- Aksen Garis --}}
-                        <div class="mt-5 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                            <div class="w-8 h-1 bg-blue-600 rounded-full mx-auto"></div>
+                        {{-- Garis Aksen (Hanya muncul di layar agak besar) --}}
+                        <div class="hidden sm:block mt-3 md:mt-5 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <div class="w-6 md:w-8 h-1 bg-blue-600 rounded-full mx-auto"></div>
                         </div>
                     </div>
                 </div>
@@ -153,6 +153,5 @@
             </div>
         </div>
     </section>
-
 </div>
 @endsection
