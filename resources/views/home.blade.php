@@ -131,7 +131,7 @@
                              class="w-full h-full object-cover rounded-[1rem] md:rounded-[1.8rem] transition-transform duration-1000 group-hover:scale-110">
                         
                         {{-- Overlay --}}
-                        <div class="absolute inset-2 md:inset-4 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[1rem] md:rounded-[1.8rem]"></div>
+                       <div class="absolute inset-2 md:inset-4 bg-transparent group-hover:bg-transparent transition-opacity duration-500 rounded-[1rem] md:rounded-[1.8rem]"></div>
                     </div>
                     
                     {{-- Detail Teks --}}
